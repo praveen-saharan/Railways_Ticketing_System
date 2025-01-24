@@ -6,11 +6,12 @@ const Ticket = () => {
     name: "Nidhi",
     destination: "Kawasaki",
     fareAmount: "220",
-    change: "80",
+    change: "80"
   };
 
   return (
     <div className="max-w-4xl mx-auto mt-40 bg p-6 rounded-lg shadow-md">
+      <img></img>
       <h2 className="text-2xl font-bold text-highlight mb-4">Hurray! Your Ticket has been confirmed</h2>
       <div className="space-y-6">
         <p><strong>Name:</strong> {bookingData.name}</p>

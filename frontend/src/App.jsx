@@ -12,7 +12,8 @@ import TrainSchedule from "./Pages/User/TrainSchedule";
 import Booking from "./Pages/User/Booking";
 import BookingSummary from "./Pages/User/BookingSummary";
 import Payment from "./Pages/User/Payment";
-import Ticket from "./Pages/User/Ticket";
+import Ticket from "./Pages/User/TicketConfirmation/TicketCard";
+import Ticket from "./Pages/User/TicketConfirmation/TicketCash";
 
 import PassengerList from "./Pages/Admin/PassengerList";
 import FinancialReports from "./Pages/Admin/FinancialReports";
