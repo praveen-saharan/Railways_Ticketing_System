@@ -12,8 +12,8 @@ import TrainSchedule from "./Pages/User/TrainSchedule";
 import Booking from "./Pages/User/Booking";
 import BookingSummary from "./Pages/User/BookingSummary";
 import Payment from "./Pages/User/Payment";
-import Ticket from "./Pages/User/TicketConfirmation/TicketCard";
-import Ticket from "./Pages/User/TicketConfirmation/TicketCash";
+import TicketCard from "./Pages/User/TicketConfirmation/TicketCard";
+import TicketCash from "./Pages/User/TicketConfirmation/TicketCash";
 
 import PassengerList from "./Pages/Admin/PassengerList";
 import FinancialReports from "./Pages/Admin/FinancialReports";
@@ -37,7 +37,8 @@ function App() {
             <Route path="/booking" element={<Booking />} />
             <Route path="/booking-summary" element={<BookingSummary />} />
             <Route path="/payment" element={<Payment />} />
-            <Route path="/ticket" element={<Ticket />} />
+            <Route path="/ticketcash" element={<TicketCash />} />
+            <Route path="/ticketcard" element={<TicketCard />} />
 
             {/* Admin pages */}
             <Route path="/admin/passenger-list" element={<PassengerList />} />

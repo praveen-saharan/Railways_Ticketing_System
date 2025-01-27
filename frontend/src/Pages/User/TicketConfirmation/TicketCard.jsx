@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Ticket = () => {
+const TicketCard = () => {
   // Static booking data
   const bookingData = {
     name: "Nidhi",
@@ -19,9 +19,10 @@ const Ticket = () => {
         <p><strong>Fare Amount:</strong> ₹{bookingData.fareAmount}</p>
         <p><strong>Card Number:</strong> {bookingData.card}</p>
       </div>
-      <h2 className="text-2xl font-bold text-highlight mb-4">You may now proceed to Platform 2 </h2>
+      <h2 className="text-2xl font-bold text-highlight mb-2">You may now proceed to Platform 2 </h2>
+      <h2 className="text-2xl font-bold text-highlight mb-2">Thanks for choosing SoT railways. Happy Journey! </h2>
     </div>
   );
 };
 
-export default Ticket;
+export default TicketCard;
