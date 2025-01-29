@@ -1,7 +1,7 @@
 .image{
-    align-items: center;
+    display: flex;
     justify-content: center;
-    text-align: center;
+    align-items: center;
 }
 img{
     display: block;
