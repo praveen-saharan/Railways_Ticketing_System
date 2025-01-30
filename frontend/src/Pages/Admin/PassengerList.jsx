@@ -3,13 +3,15 @@ import { Layout, Input, Button, Table, Pagination, Modal } from 'antd';
 import { Link } from 'react-router-dom';
 import logo1 from "../../assets/Picture1.png"; 
 
-const { Content, Sider } = Layout;
+const { Content, Sider, Footer } = Layout;
+
 
 const PassengerList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [filters, setFilters] = useState({ name: '', trainStation: '' });
   const [selectedPassenger, setSelectedPassenger] = useState(null);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [selectedKey, setSelectedKey] = useState('');
 
   // Dummy data for passengers
   const data = [
@@ -56,39 +58,54 @@ const PassengerList = () => {
   return (
     <Layout style={{ minHeight: '100vh' }} className="bg-gray-100">
       {/* Navbar */}
-      <nav className="fixed top-0 w-full bg-purple-900 text-white flex justify-between items-center px-8 py-4 shadow-md">
-        <div className="flex items-center space-x-3">
-          <img src={logo1} alt="Logo" className="h-8" />
-          <span className="text-xl font-semibold">SoT Railway Ticketing System</span>
+      <nav className="fixed top-0 w-full bg-purple-900 text-white flex justify-between items-center px-8 py-4 shadow-md z-10">
+        <div className="flex items-center space-x-4">
+          <img src={logo1} alt="Logo" className="h-10" />
+          <span className="text-2xl font-bold">SoT Railway Ticketing System</span>
         </div>
-        <button className="hover:bg-purple-300 rounded-lg px-4 py-2 text-sm font-medium">
+        <Link to="/" className="hover:bg-purple-700 rounded-lg px-4 py-2 text-sm font-medium">
           Logout
-        </button>
+        </Link>
       </nav>
 
-      {/* Sidebar */}
-      <Sider width={250} className="bg-purple-900 text-white mt-20">
-        <nav>
-          <ul>
-            <li className="mb-4">
-              <Link to="/admin" className="text-lg text-white hover:text-purple-300 transition-colors">Home</Link>
-            </li>
-            <li className="mb-4">
-              <Link to="/admin/passenger-list" className="text-lg text-white hover:text-purple-300 transition-colors">Passenger Data</Link>
-            </li>
-            <li className="mb-4">
-              <Link to="/admin/financial-reports" className="text-lg text-white hover:text-purple-300 transition-colors">Financial Report</Link>
-            </li>
-          </ul>
-        </nav>
-      </Sider>
+       {/* Sidebar */}
+            <Sider width={250} className="bg-white fixed h-full shadow-lg mt-16">
+              <nav>
+                <ul className="space-y-6 px-4 py-8">
+                  <li>
+                    <Link 
+                      to="/admin" 
+                      className={`text-lg transition-colors px-4 py-2 block ${selectedKey === '/admin' ? 'bg-purple-900 text-white' : 'hover:bg-purple-200'}`} 
+                      onClick={() => setSelectedKey('/admin')}>
+                      Home
+                    </Link>
+                  </li>
+                  <li>
+                    <Link 
+                      to="/admin/passenger-list" 
+                      className={`text-lg transition-colors px-4 py-2 block ${selectedKey === '/admin/passenger-list' ? 'bg-purple-900 text-white' : 'hover:bg-purple-200'}`} 
+                      onClick={() => setSelectedKey('/admin/passenger-list')}>
+                      Passenger Data
+                    </Link>
+                  </li>
+                  <li>
+                    <Link 
+                      to="/admin/financial-reports" 
+                      className={`text-lg transition-colors px-4 py-2 block ${selectedKey === '/admin/financial-reports' ? 'bg-purple-900 text-white' : 'hover:bg-purple-200'}`} 
+                      onClick={() => setSelectedKey('/admin/financial-reports')}>
+                      Financial Report
+                    </Link>
+                  </li>
+                </ul>
+              </nav>
+            </Sider>
 
       {/* Main Content */}
-      <Layout className="site-layout">
-        <Content className="pt-24 px-8">
+      <Layout className="site-layout" style={{ marginLeft: 250 }}>
+        <Content className="pt-24 px-8 pb-20"> {/* Added padding-bottom to prevent content from hiding behind footer */}
           {/* Filter Section */}
-          <div className="mb-8 flex items-center justify-between">
-            <h2 className="text-3xl font-semibold text-gray-800">Passenger List</h2>
+          <div className="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+            <h2 className="text-3xl font-semibold text-gray-800 mb-4 sm:mb-0">Financial Reports</h2>
             <div className="flex items-center space-x-4">
               <Input
                 value={filters.name}
@@ -151,8 +168,16 @@ const PassengerList = () => {
           </div>
         )}
       </Modal>
+
+      {/* Footer */}
+      <Footer className="text-center text-white bg-purple-900 py-4 shadow-md fixed bottom-0 w-full">
+        <p>© 2025 SoT Railway Ticketing System. All Rights Reserved.</p>
+      </Footer>
+
     </Layout>
   );
 };
 
 export default PassengerList;
+
+

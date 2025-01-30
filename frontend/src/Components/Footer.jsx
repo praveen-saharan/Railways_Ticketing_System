@@ -3,11 +3,9 @@ import '../Footer.css'
 
 const Footer = () => {
   return (
-    <footer className="custom-footer">
-      <div className="custom-title">
-        <p>&copy; Railway Ticketing Platform 2025 | All Rights Reserved</p>
-      </div>
-    </footer>
+    <Footer className="text-center text-white bg-purple-900 py-4 shadow-md fixed bottom-0 w-full">
+    <p>© 2025 SoT Railway Ticketing System. All Rights Reserved.</p>
+  </Footer>
   );
 };
 
