@@ -6,15 +6,117 @@
 ### **Purpose**
 The **Railways Ticketing System** is designed to revolutionize the way railway tickets are booked and managed. Users can effortlessly register, log in, and handle their tickets, while admins get a powerful interface for overseeing users and tickets. This system promises efficient tracking and a seamless booking experience for all.
 
+## Frontend Setup
+
+### If you have already cloned the repository:
+
+1. **Pull the latest changes:**
+  ```bash
+  git pull
+  ```
+
+2. **Checkout the working code:**
+  ```bash
+  git checkout working-code
+  ```
+
+3. **Navigate to the frontend directory:**
+  ```bash
+  cd frontend
+  ```
+
+4. **Install the dependencies (including legacy peer dependencies):**
+  ```bash
+  npm install --legacy-peer-deps
+  ```
+
+5. **Start the frontend development server:**
+  ```bash
+  npm run dev
+  ```
+
+### If you haven't cloned the repository yet:
+
+1. **Clone the repository:**
+  ```bash
+  git clone https://github.com/praveen-saharan/Railways_Ticketing_System.git
+  ```
+
+2. **Navigate to the project directory:**
+  ```bash
+  cd Railways_Ticketing_System
+  ```
+
+3. **Go to the frontend directory:**
+  ```bash
+  cd frontend
+  ```
+
+4. **Install the dependencies:**
+  ```bash
+  npm install --legacy-peer-deps
+  ```
+
+5. **Start the development server:**
+  ```bash
+  npm run dev
+  ```
+
+## Backend Setup
+
+### If you haven't cloned the backend repository yet:
+
+1. **Clone the backend repository:**
+  ```bash
+  git clone https://github.com/praveen-saharan/Backend.git
+  ```
+
+2. **Checkout the working code:**
+  ```bash
+  git checkout working-code
+  ```
+
+### If you’ve already cloned the backend repository:
+
+1. **Pull the latest changes:**
+  ```bash
+  git pull
+  ```
+
+2. **Checkout the working code:**
+  ```bash
+  git checkout working-code
+  ```
+
+## Database Setup
+
+1. **Open MySQL Workbench and clean your database (if necessary):**
+
+  - **Drop the existing `newdb` database:**
+    ```sql
+    DROP DATABASE newdb;
+    ```
+
+  - **Recreate the empty `newdb` database:**
+    ```sql
+    CREATE DATABASE newdb;
+    ```
+
+2. **If you don’t already have the `newdb` database, simply create it by running:**
+  ```sql
+  CREATE DATABASE newdb;
+  ```
+
+3. **Run your project and then go to the admin section to upload the `train.csv` file.**
 <!-- ### **Scope**
 This project encompasses:
-- **User Roles:** Regular users and administrators.
+- **Uer Roles:** Regular users and administrators.
 - **Features:** Ticket creation, viewing, updating, deletion, user management, and role-based access control.
 - **Key Functionalities:**
   - **User Registration/Login**: Sign up, log in, and manage accounts with ease.
   - **Ticket Management**: Create, view, update, and delete tickets effortlessly.
   - **Admin Panel**: Full control over user accounts and ticket data for admins.
-  - **Role-based Access Control**: Tailored access levels for users and admins.
+  - **Role-based Access Control**: Tailored access levels for users and admins.>
   
 ### **Tech Stack**
 - **Frontend**: React
