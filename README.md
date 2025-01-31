@@ -83,9 +83,7 @@ cd Railways_Ticketing_System
 #### 3. Install Dependencies
 
 ```bash
-npm install
-# or
-yarn install
+npm install --legacy-peer-deps
 ```
 
 #### 4. Run the Development Server
